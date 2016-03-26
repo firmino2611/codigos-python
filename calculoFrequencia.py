@@ -1,4 +1,5 @@
 #-*- coding: utf-8 -*-
+#Python v3.3.0
 
 def frequencia(valores,intervalo,inicial,final):
 	repetidos = {}
@@ -12,21 +13,21 @@ def frequencia(valores,intervalo,inicial,final):
 			repetidos[c] += 1
 		else:
 			repetidos[c] = 1
-	print 'Classe        |   fi   |    Fi  '
+	print ('Classe        |   fi   |    Fi  ')
 	while iteracoes:
 		for x in repetidos:
-			if x >= limInferior and x < limSuperior:  #os valores de cada classe deve ser colocado manualmente
+			if int(x) >= limInferior and int(x) < limSuperior: #os valores de cada classe deve ser colocado manualmente
 				frequencia += repetidos[x]
 		somatorio += frequencia
-		print limInferior,'|--' ,limSuperior, '        ',frequencia,'      ', somatorio	
+		print (limInferior,'|--' ,limSuperior, '        ',frequencia,'      ', somatorio	)
 		frequencia = 0
 		limInferior += intervalo
 		limSuperior += intervalo
 		iteracoes -= 1
-	print '     somatorio = ',somatorio
+	print ('     somatorio = ',somatorio)
 
-numeros = input("digite os valores separados somente por virgula \n")	
-intervalo = input("\nDigite o intervalo das classes: ") #intervalo das classes
-inicial = input("\nDigite o limite inferior inicial: ") #limite mínimo 
-final = input("\nDigite limite superior final: ") #limite máximo
-frequencia(numeros,intervalo,inicial,final)
+numeros = input("digite os valores separados somente por virgula \n")
+intervalo =int(input("\nDigite o intervalo das classes: ")) #intervalo das classes
+inicial = int(input("\nDigite o limite inferior inicial: ")) #limite mínimo 
+final = int(input("\nDigite limite superior final: ")) #limite máximo
+frequencia(numeros.split(','),intervalo,inicial,final)
