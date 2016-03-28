@@ -16,7 +16,7 @@ def frequencia(valores,intervalo,inicial,final):
 	print ('Classe        |   fi   |    Fi  ')
 	while iteracoes:
 		for x in repetidos:
-			if int(x) >= limInferior and int(x) < limSuperior: #os valores de cada classe deve ser colocado manualmente
+			if float(x) >= limInferior and float(x) < limSuperior:
 				frequencia += repetidos[x]
 		somatorio += frequencia
 		print (limInferior,'|--' ,limSuperior, '        ',frequencia,'      ', somatorio	)
